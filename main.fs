@@ -3,9 +3,15 @@ module Assignment
 type Tree =
     | Node of Tree * Tree
     | Leaf of int
+    |sidesTree of Node(Leaf,Leaf)
 
 let rec prod (t:Tree) :int =
-    0
+  match t with
+  // You need to define a constuctor for union
+  // subtype first
+  | Node (lLeaf, rLeaf)-> lLeaf * rLeaf
+  | Leaf
+  
 
 let rec map (f:int->int) (t:Tree) :Tree =
     t
